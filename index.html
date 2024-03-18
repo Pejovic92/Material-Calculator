@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kalkulator materijala</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+	<h1>Kalkulator materijala</h1>
+
+	<div class="container">
+        <div id="menu">
+            <button onclick="addRow()">Dodaj red</button>
+            <!-- <button onclick="calculateArea()">Izracunaj povrsinu</button>
+            <button onclick="calculateSum()">Izracunaj sumu</button>
+            <button onclick="calculateSumPlusWaste()">Izracunaj sumu sa otpadom</button>
+            <button onclick="calculatePrice()">Izracunaj cenu materijala</button> -->
+            <button onclick="calculateAll()">Izracunaj sve</button>
+            <!-- <button onclick="calculateSide()">Izracunaj kantovanje</button>
+            <button onclick="calculateSideSum()">Izracunaj ukupnu duzinu kantovanja</button>
+            <button onclick="calculateSideSumPlusWaste()">Izracunaj ukupnu duzinu kantovanja sa otpadom </button> -->
+            <button onclick="saveData()">Sacuvaj</button>
+            <button onclick="writeData()">Ucitaj</button>
+            <input type="file" id="fileInput">
+            <pre id="fileContents"></pre>
+        </div>
+		<div id="inputs">
+            </div>
+           
+		</div>
+
+
+		<div class="end-results">
+			<h2>Rezultati</h2>
+			
+			<div class="info-message">
+                <h3>Na ukupnu povrsinu elemenata, dodaje se otpad, koji iznosi 15%</h3>
+                <h3>Na ukupnu duzinu kantovanja, dodaje se otpad, koji iznosi 10 %</h3>
+            </div>
+
+        <div class="pricing">
+            <div class = "materialPrice">
+                <label for="materialInfoText" class="materialInfoText">Cena materijala</label> 
+                <input type="number" class="priceOfMaterial"> 
+                <label class="materialInfoText">rsd/m2</label>
+            </div>
+
+
+            <div class = "sideProcessing">
+                <label for="sideProcessingInfoText" class="sideProcessingInfoText">Cena kantovanja</label> 
+                <input type="number" class="sideProcessingAmount"> 
+                <label class="sideProcessingInfoText">rsd/m</label>
+            </div>
+        </div>
+            <div class ='sum-result'>
+                <label for="sum" class="sum">Suma povrsine</label> 
+                <input type="number" class="sumField"> 
+                <label class="sum">m2</label>
+            </div>
+
+            <div class = "sum-result-with-waste">
+                <label for="sumWithWaste" class="sumWithWaste">Suma povrsine sa otpadom</label> 
+                <input type="number" class="sumWithWasteField"> 
+                <label class="sumWithWaste">m2</label>
+            </div>
+
+            <div class = "side-processing-length">
+                <label for="sideLength" class="sideLength">Duzina kantovanja</label> 
+                <input type="number" class="side-proccessing-field"> 
+                <label class="sideLength">m</label>
+            </div>
+
+            <div class = "side-processing-length-with-waste">
+                <label for="sideProcessingTotalInfoText" class="sideProcessingTotalInfoText"> Duzina kantovanja sa otpadom</label> 
+                <input type="number" class="sideProcessingField"> 
+                <label class="sideProcessingTotalInfoText">m</label>
+            </div>
+<div class = "totalPricing">
+            <div class = "sumPrice">
+                <label for="sumPriceInfoText" class="sumPriceInfoText">Ukupna cena materijala</label> 
+                <input type="number" class="sumPriceFiled"> 
+                <label class="sumPriceInfoText">rsd</label>
+            </div>
+
+            <div class = "sideProcessingPrice">
+                <label for="sideProcessingPriceInfoText" class="sideProcessingPriceInfoText">Ukupna cena kantovanja</label> 
+                <input type="number" class="sideProcessingSum"> 
+                <label class="sideProcessingPriceInfoText">rsd</label>
+            </div>
+
+            <div class = "priceSum">
+                <label for="priceInfoText" class="priceInfoText">Ukupna cena</label> 
+                <input type="number" class="totalAmmount"> 
+                <label class="priceInfoText">rsd</label>
+            </div>
+</div>
+
+		
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+    <script src="saveAndLoad.js"></script>
+</body>
+</html>
