@@ -88,7 +88,7 @@ label {
     padding-top: 40px;
     padding-bottom: 40px;
     color: rgb(127, 228, 127);
-    border: 4px solid rgb(142, 55, 228);
+    border: 1px solid rgb(142, 55, 228);
 	/* position: relative; */
 	text-align: left;
 	width: fit-content;
@@ -138,6 +138,10 @@ label {
     color:rgb(255, 0, 89);
     padding-right:143px;
 }
+.mandatoryAreaInfoText{
+    color:rgb(127, 228, 127);
+    padding-right:104px;
+}
 #fileInput{
     height: 25px;
     padding: 2px;
@@ -145,10 +149,56 @@ label {
     position: relative;
     top: 5px;
 }
+.rangeSlider{
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+}
+
+.sliderInfotext {
+    margin: 0px; /* Adjust margin between label and slider */
+    padding-right: 20px;
+    color:rgb(127, 228, 127);
+}
+            
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    background: rgba(227, 11, 11, 0.616);
+    width:30px;
+    border-radius: 0%;
+
+    
+  }
+/* Thumb: webkit */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 15px;
+    width: 15px;
+    background-color: #960000;
+    border-radius: 0%;
+    border: 1px solid rgb(245, 101, 29);
+  }
+  input[type="range"].on {
+    background-color: #06f84a;
+    
+  }
+  input[type="range"].on::-webkit-slider-thumb {
+    background-color: #20bb4c;
+    
+  }
 
 
 
-.info-message, .sum-result, .sum-result-with-waste, .materialPrice, .sumPrice, .sideProcessing, .sideProcessingPrice, .side-processing-length, .priceSum {
+
+
+.info-message, .sum-result, .sum-result-with-waste, .materialPrice, .sumPrice, .sideProcessing, .sideProcessingPrice, .side-processing-length, .priceSum, .mandatoryAreaOfBoards {
  	/* position: relative;
 	left: 450px; */
 	/* display: block; */

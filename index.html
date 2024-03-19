@@ -32,9 +32,14 @@
 
 		<div class="end-results">
 			<h2>Rezultati</h2>
+
+            <div class = "rangeSlider">
+            <label for="sliderInfotext", class="sliderInfotext"> Da li se kupuje cela ploca ? </label>
+            <input type="range" min="0" max="1" value="0" class="slider" id="hideWasteSlider">
+            </div>
 			
 			<div class="info-message">
-                <h3>Na ukupnu povrsinu elemenata, dodaje se otpad, koji iznosi 15%</h3>
+                <h3 class = "addWasteInfoText">Na ukupnu povrsinu elemenata, dodaje se otpad, koji iznosi 15%</h3>
                 <h3>Na ukupnu duzinu kantovanja, dodaje se otpad, koji iznosi 10 %</h3>
             </div>
 
@@ -62,6 +67,12 @@
                 <label for="sumWithWaste" class="sumWithWaste">Suma povrsine sa otpadom</label> 
                 <input type="number" class="sumWithWasteField"> 
                 <label class="sumWithWaste">m2</label>
+            </div>
+
+            <div class = "mandatoryAreaOfBoards">
+                <label for="mandatoryAreaInfoText" class="mandatoryAreaInfoText">Potrebna povrsina</label> 
+                <input type="number" class="mandatoryAreaField"> 
+                <label class="mandatoryAreaInfoText">m2</label>
             </div>
 
             <div class = "side-processing-length">
