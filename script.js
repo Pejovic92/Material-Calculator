@@ -179,6 +179,36 @@ function calculateTotalPrice(){
     result.value = parseFloat(materialCost) + parseFloat(sideProcessingMaterialCost);
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    let hideWasteSlider = document.getElementById("hideWasteSlider");
+    let sumResultWithWaste = document.querySelector(".sum-result-with-waste");
+    let infoText = document.querySelector(".addWasteInfoText");
+    let mandatoryArea = document.querySelector(".mandatoryAreaOfBoards");
+
+    mandatoryArea.style.display = "none";
+    
+
+    hideWasteSlider.addEventListener("input", function () {
+        if (hideWasteSlider.value == 0) {
+            sumResultWithWaste.style.display = "block";
+            infoText.style.display = "block";
+            mandatoryArea.style.display = "none"
+        } else {
+            sumResultWithWaste.style.display = "none";
+            infoText.style.display = "none";
+            mandatoryArea.style.display = "block"
+        }
+    });
+});
+document.getElementById('hideWasteSlider').addEventListener('input', function() {
+    if (this.value > 0) {
+      this.classList.add('on');
+    } else {
+      this.classList.remove('on');
+    }
+  });   
+
+
 function calculateAll(){
     calculateArea()
     calculateSum()
