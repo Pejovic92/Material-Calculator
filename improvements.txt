@@ -1,0 +1,6 @@
+Grana addWholeBoardOptionFunctionality - dodata je funkcionalnost ako se odabere opcija cele ploce da se izracuna potrebna povrsina
+ploca. Kod ove grane dinamicki menjam polja u rezultatu u zavisnosti sta je odabrano (cela ploca ili ne). Ovde nije ukljucena
+prepravljena funkcionalnost cuvanja i citanja za opciju cele ploce
+
+TODO:
+Prva stvar u nizu je prepravljanje file-a saveAndLoad da podrzi opciju cele ploce.

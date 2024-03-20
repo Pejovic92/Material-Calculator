@@ -66,6 +66,8 @@ function calculateSum() {
     if(resultPlaceholder){
     resultPlaceholder.value = sum.toFixed(3)
     }
+
+    
 }
 
 function calculateSumPlusWaste(){
@@ -181,22 +183,29 @@ function calculateTotalPrice(){
 
 document.addEventListener("DOMContentLoaded", function () {
     let hideWasteSlider = document.getElementById("hideWasteSlider");
+    let sumResult = document.querySelector('.sum-result')
     let sumResultWithWaste = document.querySelector(".sum-result-with-waste");
     let infoText = document.querySelector(".addWasteInfoText");
     let mandatoryArea = document.querySelector(".mandatoryAreaOfBoards");
+    let sumAreaPlusWaste = document.querySelector('.areaPlusWaste');
 
     mandatoryArea.style.display = "none";
-    
+    sumAreaPlusWaste.style.display = "none";
 
     hideWasteSlider.addEventListener("input", function () {
         if (hideWasteSlider.value == 0) {
             sumResultWithWaste.style.display = "block";
             infoText.style.display = "block";
-            mandatoryArea.style.display = "none"
-        } else {
+            sumResult.style.display = "block";
+            mandatoryArea.style.display = "none";
+            sumAreaPlusWaste.style.display = "none";
+
+        } else if (hideWasteSlider.value == 1){
             sumResultWithWaste.style.display = "none";
             infoText.style.display = "none";
+            sumResult.style.display = "none";
             mandatoryArea.style.display = "block"
+            sumAreaPlusWaste.style.display = "block";
         }
     });
 });
@@ -208,6 +217,39 @@ document.getElementById('hideWasteSlider').addEventListener('input', function() 
     }
   });   
 
+  //DOVRSITI
+
+const slider = document.getElementById('hideWasteSlider');
+
+slider.addEventListener('input', function() {
+
+    if (parseFloat(this.value) === 1) {
+
+        document.querySelector('.calculate').addEventListener('click', function() {
+            let result =  document.querySelector('.mandatoryAreaField');
+            let resultPlusWaste = document.querySelector('.areaPlusWasteField');
+            let oneBoardArea = Number((2.8 * 2.07).toFixed(3))
+            let sumAreaValue = parseFloat (document.querySelector(".sumField").value * 1.1); // dodavanje 10% na povrsinu
+            console.log(sumAreaValue);
+
+            resultPlusWaste.value = sumAreaValue.toFixed(3);
+
+            if(sumAreaValue>=oneBoardArea){
+                let multiplier = Math.ceil(sumAreaValue/oneBoardArea);
+                result.value =  (multiplier* oneBoardArea).toFixed(3)
+                console.log("Evo me u If-u")
+            }
+            else{
+                result.value = oneBoardArea.toFixed(3);
+                console.log("Evo me u else-u")
+            }
+        });
+
+ 
+    } else {
+        // to do
+    }
+});
 
 function calculateAll(){
     calculateArea()
