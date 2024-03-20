@@ -15,7 +15,7 @@
             <button onclick="calculateSum()">Izracunaj sumu</button>
             <button onclick="calculateSumPlusWaste()">Izracunaj sumu sa otpadom</button>
             <button onclick="calculatePrice()">Izracunaj cenu materijala</button> -->
-            <button onclick="calculateAll()">Izracunaj sve</button>
+            <button onclick="calculateAll()" class ="calculate">Izracunaj sve</button>
             <!-- <button onclick="calculateSide()">Izracunaj kantovanje</button>
             <button onclick="calculateSideSum()">Izracunaj ukupnu duzinu kantovanja</button>
             <button onclick="calculateSideSumPlusWaste()">Izracunaj ukupnu duzinu kantovanja sa otpadom </button> -->
@@ -57,6 +57,13 @@
                 <label class="sideProcessingInfoText">rsd/m</label>
             </div>
         </div>
+
+        <div class = "areaPlusWaste">
+            <label for="areaPlusWasteInfoText" class="areaPlusWasteInfoText">Suma povrsine + 10 %</label> 
+            <input type="number" class="areaPlusWasteField"> 
+            <label class="areaPlusWasteInfoText">m2</label>
+        </div>
+
             <div class ='sum-result'>
                 <label for="sum" class="sum">Suma povrsine</label> 
                 <input type="number" class="sumField"> 
@@ -74,6 +81,7 @@
                 <input type="number" class="mandatoryAreaField"> 
                 <label class="mandatoryAreaInfoText">m2</label>
             </div>
+
 
             <div class = "side-processing-length">
                 <label for="sideLength" class="sideLength">Duzina kantovanja</label> 

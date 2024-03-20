@@ -142,6 +142,11 @@ label {
     color:rgb(127, 228, 127);
     padding-right:104px;
 }
+
+.areaPlusWasteInfoText{
+    color:rgb(127, 228, 127);
+    padding-right:69px;
+}
 #fileInput{
     height: 25px;
     padding: 2px;
@@ -198,7 +203,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 
 
-.info-message, .sum-result, .sum-result-with-waste, .materialPrice, .sumPrice, .sideProcessing, .sideProcessingPrice, .side-processing-length, .priceSum, .mandatoryAreaOfBoards {
+.info-message, .sum-result, .sum-result-with-waste, .materialPrice, .sumPrice, .sideProcessing, .sideProcessingPrice, .side-processing-length, .priceSum, .mandatoryAreaOfBoards, .areaPlusWaste {
  	/* position: relative;
 	left: 450px; */
 	/* display: block; */
