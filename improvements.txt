@@ -3,4 +3,9 @@ ploca. Kod ove grane dinamicki menjam polja u rezultatu u zavisnosti sta je odab
 prepravljena funkcionalnost cuvanja i citanja za opciju cele ploce
 
 TODO:
-Prva stvar u nizu je prepravljanje file-a saveAndLoad da podrzi opciju cele ploce.
+
+- pristupiti ulepsavanju koda, odnosno uklanjanje nepotrebnih stvari i slicno
+-poraditi malo na dizajnu i deployovati koristeci github
+-popraviti: kada se odabere cela ploca pa se izracuna, nakon vracanja na regularan flow (slider off) ostaje zakucana 
+cena od cele ploce
+ - kod cuvanja prepraviti: write() pozivam u oba slucaj i za celu tablu, tu je greska - POPRAVLJENO

@@ -11,25 +11,17 @@
 	<div class="container">
         <div id="menu">
             <button onclick="addRow()">Dodaj red</button>
-            <!-- <button onclick="calculateArea()">Izracunaj povrsinu</button>
-            <button onclick="calculateSum()">Izracunaj sumu</button>
-            <button onclick="calculateSumPlusWaste()">Izracunaj sumu sa otpadom</button>
-            <button onclick="calculatePrice()">Izracunaj cenu materijala</button> -->
             <button onclick="calculateAll()" class ="calculate">Izracunaj sve</button>
-            <!-- <button onclick="calculateSide()">Izracunaj kantovanje</button>
-            <button onclick="calculateSideSum()">Izracunaj ukupnu duzinu kantovanja</button>
-            <button onclick="calculateSideSumPlusWaste()">Izracunaj ukupnu duzinu kantovanja sa otpadom </button> -->
-            <button onclick="saveData()">Sacuvaj</button>
-            <button onclick="writeData()">Ucitaj</button>
+            <button onclick="saveData()" class = "save">Sacuvaj</button>
+            <button onclick="writeData()" class = "write">Ucitaj</button>
+            <button onclick="saveDataWholeBoardOption()" class = "saveWholeBoardOption">Sacuvaj1</button>
+            <button onclick="writeDataWholeBoardOption()" class = "writeWholeBoardOption">Ucitaj1</button>
             <input type="file" id="fileInput">
             <pre id="fileContents"></pre>
         </div>
 		<div id="inputs">
-            </div>
-           
+            </div>   
 		</div>
-
-
 		<div class="end-results">
 			<h2>Rezultati</h2>
 
@@ -120,5 +112,6 @@
 
 	<script src="script.js"></script>
     <script src="saveAndLoad.js"></script>
+    <script src="saveAndLoadWholeBoard.js"></script>
 </body>
 </html>

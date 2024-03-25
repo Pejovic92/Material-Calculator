@@ -64,10 +64,8 @@ function calculateSum() {
     });
     let resultPlaceholder = document.querySelector('.sumField');
     if(resultPlaceholder){
-    resultPlaceholder.value = sum.toFixed(3)
-    }
-
-    
+    resultPlaceholder.value = sum.toFixed(3);
+    }   
 }
 
 function calculateSumPlusWaste(){
@@ -134,10 +132,8 @@ function calculateSide() {
             result = widthInput/1000
            
         } else if (lengthCheckboxes === 0 && widthCheckboxes === 2) {
-            result = (widthInput/1000)*2
-           
+            result = (widthInput/1000)*2 
         }
-
         resultInput.value = result.toFixed(2)
     });
 }
@@ -158,28 +154,108 @@ function calculateSideSumPlusWaste(){
     let sideProcessingSumWithWasteFiled = document.querySelector('.sideProcessingField');
 
    let value = parseFloat(parseFloat(sideProcessingValue*0.1)) + parseFloat(sideProcessingValue)
-   sideProcessingSumWithWasteFiled.value = Math.round(value); // zaokruzivanje na najblizi ceo broj
+   sideProcessingSumWithWasteFiled.value = Math.ceil(value); // zaokruzivanje na ceo broj
 }
 
 function calculateSideProccessingPrice (){
     let sideProcessingUnitPrice = document.querySelector('.sideProcessingAmount').value;
     let totalSideProcessingLength = document.querySelector('.sideProcessingField').value;
     let resultField = document.querySelector('.sideProcessingSum');
-
-    console.log("Evo jedinicne cene", sideProcessingUnitPrice)
-    console.log("Evo duzine kantovanja",totalSideProcessingLength)
-
     resultField.value = sideProcessingUnitPrice * totalSideProcessingLength;
-    console.log(resultField.value)
 }
 
 function calculateTotalPrice(){
     let materialCost = document.querySelector('.sumPriceFiled').value;
     let sideProcessingMaterialCost = document.querySelector('.sideProcessingSum').value;
-
     let result = document.querySelector('.totalAmmount');
     result.value = parseFloat(materialCost) + parseFloat(sideProcessingMaterialCost);
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     let hideWasteSlider = document.getElementById("hideWasteSlider");
+//     let sumResult = document.querySelector('.sum-result')
+//     let sumResultWithWaste = document.querySelector(".sum-result-with-waste");
+//     let infoText = document.querySelector(".addWasteInfoText");
+//     let mandatoryArea = document.querySelector(".mandatoryAreaOfBoards");
+//     let sumAreaPlusWaste = document.querySelector('.areaPlusWaste');
+
+//     mandatoryArea.style.display = "none";
+//     sumAreaPlusWaste.style.display = "none";
+
+//     hideWasteSlider.addEventListener("input", function () {
+//         if (hideWasteSlider.value == 0) {
+//             sumResultWithWaste.style.display = "block";
+//             infoText.style.display = "block";
+//             sumResult.style.display = "block";
+//             mandatoryArea.style.display = "none";
+//             sumAreaPlusWaste.style.display = "none";
+
+//         } else if (hideWasteSlider.value == 1){
+//             sumResultWithWaste.style.display = "none";
+//             infoText.style.display = "none";
+//             sumResult.style.display = "none";
+//             mandatoryArea.style.display = "block"
+//             sumAreaPlusWaste.style.display = "block";
+//         }
+//     });
+// });
+// document.getElementById('hideWasteSlider').addEventListener('input', function() {
+//     if (this.value > 0) {
+//       this.classList.add('on');
+//     } else {
+//       this.classList.remove('on');
+//     }
+//   });   
+
+
+// const slider = document.getElementById('hideWasteSlider');
+
+// slider.addEventListener('input', function() {
+
+//     let totalMaterialCostField = document.querySelector('.sumPriceFiled');
+//     let sideProcessingCost = document.querySelector('.sideProcessingSum');
+//     let sumPrice = document.querySelector('.totalAmmount');
+
+
+//     if (parseFloat(this.value) === 1) {
+
+//         document.querySelector('.calculate').addEventListener('click', function() {
+//             let result =  document.querySelector('.mandatoryAreaField');
+//             let resultPlusWaste = document.querySelector('.areaPlusWasteField');
+//             let oneBoardArea = Number((2.8 * 2.07).toFixed(3))
+//             let sumAreaValue = parseFloat (document.querySelector(".sumField").value * 1.1); // dodavanje 10% na povrsinu
+//             let materialPrice = document.querySelector('.priceOfMaterial')
+           
+//             let sumPlusWaste = document.querySelector('.sumWithWasteField')
+//             let totalPrice = document.querySelector('.totalAmmount');
+            
+
+//             resultPlusWaste.value = sumAreaValue.toFixed(3);
+
+//             if(sumAreaValue>=oneBoardArea){
+//                 let multiplier = Math.ceil(sumAreaValue/oneBoardArea);
+//                 result.value =  (multiplier* oneBoardArea).toFixed(3)
+//                 totalMaterialCostField.value = result.value * materialPrice.value;
+             
+//             }
+//             else{
+//                 result.value = oneBoardArea.toFixed(3);
+//                 totalMaterialCostField.value = result.value * materialPrice.value
+//             }
+            
+
+//              sumPrice.value = Number(totalMaterialCostField.value) + Number(sideProcessingCost.value);
+             
+//         })
+
+ 
+//     } else if(parseFloat(this.value) === 0){
+//     }
+// });
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", function () {
     let hideWasteSlider = document.getElementById("hideWasteSlider");
@@ -188,6 +264,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let infoText = document.querySelector(".addWasteInfoText");
     let mandatoryArea = document.querySelector(".mandatoryAreaOfBoards");
     let sumAreaPlusWaste = document.querySelector('.areaPlusWaste');
+    let totalMaterialCostField = document.querySelector('.sumPriceFiled');
+    let sideProcessingCost = document.querySelector('.sideProcessingSum');
+    let sumPrice = document.querySelector('.totalAmmount');
 
     mandatoryArea.style.display = "none";
     sumAreaPlusWaste.style.display = "none";
@@ -199,8 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
             sumResult.style.display = "block";
             mandatoryArea.style.display = "none";
             sumAreaPlusWaste.style.display = "none";
-
-        } else if (hideWasteSlider.value == 1){
+        } else if (hideWasteSlider.value == 1) {
             sumResultWithWaste.style.display = "none";
             infoText.style.display = "none";
             sumResult.style.display = "none";
@@ -208,48 +286,44 @@ document.addEventListener("DOMContentLoaded", function () {
             sumAreaPlusWaste.style.display = "block";
         }
     });
-});
-document.getElementById('hideWasteSlider').addEventListener('input', function() {
-    if (this.value > 0) {
-      this.classList.add('on');
-    } else {
-      this.classList.remove('on');
-    }
-  });   
 
-  //DOVRSITI
+    document.getElementById('hideWasteSlider').addEventListener('input', function() {
+        if (this.value > 0) {
+          this.classList.add('on');
+        } else {
+          this.classList.remove('on');
+        }
+      });  
 
-const slider = document.getElementById('hideWasteSlider');
-
-slider.addEventListener('input', function() {
-
-    if (parseFloat(this.value) === 1) {
-
-        document.querySelector('.calculate').addEventListener('click', function() {
+    // Logic to handle the .calculate button when slider is 1
+    document.querySelector('.calculate').addEventListener('click', function() {
+        if (parseFloat(hideWasteSlider.value) === 1) {
             let result =  document.querySelector('.mandatoryAreaField');
             let resultPlusWaste = document.querySelector('.areaPlusWasteField');
-            let oneBoardArea = Number((2.8 * 2.07).toFixed(3))
-            let sumAreaValue = parseFloat (document.querySelector(".sumField").value * 1.1); // dodavanje 10% na povrsinu
-            console.log(sumAreaValue);
-
+            let oneBoardArea = Number((2.8 * 2.07).toFixed(3));
+            let sumAreaValue = parseFloat(document.querySelector(".sumField").value * 1.1); // dodavanje 10% na povrsinu
+            let materialPrice = document.querySelector('.priceOfMaterial');
+              
             resultPlusWaste.value = sumAreaValue.toFixed(3);
 
-            if(sumAreaValue>=oneBoardArea){
-                let multiplier = Math.ceil(sumAreaValue/oneBoardArea);
-                result.value =  (multiplier* oneBoardArea).toFixed(3)
-                console.log("Evo me u If-u")
-            }
-            else{
+            if (sumAreaValue >= oneBoardArea) {
+                let multiplier = Math.ceil(sumAreaValue / oneBoardArea);
+                result.value =  (multiplier * oneBoardArea).toFixed(3);
+                totalMaterialCostField.value = result.value * materialPrice.value;
+            } else {
                 result.value = oneBoardArea.toFixed(3);
-                console.log("Evo me u else-u")
+                totalMaterialCostField.value = result.value * materialPrice.value;
             }
-        });
 
- 
-    } else {
-        // to do
-    }
+            sumPrice.value = Number(totalMaterialCostField.value) + Number(sideProcessingCost.value);
+        }
+        else if (parseFloat(hideWasteSlider.value) === 0){
+            totalMaterialCostField.value = result.value * materialPrice.value;
+            sumPrice.value = Number(totalMaterialCostField.value) + Number(sideProcessingCost.value);
+        }
+    });
 });
+
 
 function calculateAll(){
     calculateArea()
