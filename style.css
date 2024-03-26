@@ -10,8 +10,9 @@ body {
     background-repeat: no-repeat;
     background-position: center; */
 	font-family: sans-serif;
-	padding: 50px;
+	padding: 30px;
     height: 100vh;
+    background-color: #dce2de;
 }
 
  h1 {
@@ -44,29 +45,32 @@ h3 {
 
 #menu {
     text-align: center;
-    background-color: green;
+    background-color: rgb(123, 65, 231);
     border-style: solid;
+    border: 2px solid rgb(126, 78, 174);
     border-radius: 10px;
     height: 40px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 50px;
 
 }
-#length, #width, #result{
-    background-color: rgb(179, 176, 176);
-    height: 30px;
+.length, .width, .result, .sideProcessingresult{
+    background-color: rgb(219, 244, 222);
+    height: 22px;
+    border: 1px solid rgb(143, 95, 231)
+   
 }
 
 button{
     height: 25px;
     padding: 2px;
-    background-color: rgb(201, 200, 200);
+    background-color: rgb(221, 224, 234);
     position: relative;
     top: 5px;
 }
 
 label {
-    color: rgb(95, 233, 205);
+    color: rgb(143, 95, 231);
     font-size: 17px;
     margin-right: 10px;
     margin-left:30px;
@@ -199,10 +203,6 @@ input[type="range"]::-webkit-slider-thumb {
     
   }
 
-
-
-
-
 .info-message, .sum-result, .sum-result-with-waste, .materialPrice, .sumPrice, .sideProcessing, .sideProcessingPrice, .side-processing-length, .priceSum, .mandatoryAreaOfBoards, .areaPlusWaste {
  	/* position: relative;
 	left: 450px; */
@@ -235,4 +235,7 @@ td{
 }
 .resultData{
     background-color: rgb(80, 216, 98);
+}
+.buttons{
+    cursor: pointer;
 }

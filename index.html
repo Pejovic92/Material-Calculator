@@ -10,13 +10,15 @@
 
 	<div class="container">
         <div id="menu">
-            <button onclick="addRow()">Dodaj red</button>
-            <button onclick="calculateAll()" class ="calculate">Izracunaj sve</button>
-            <button onclick="saveData()" class = "save">Sacuvaj</button>
-            <button onclick="writeData()" class = "write">Ucitaj</button>
-            <button onclick="saveDataWholeBoardOption()" class = "saveWholeBoardOption">Sacuvaj1</button>
-            <button onclick="writeDataWholeBoardOption()" class = "writeWholeBoardOption">Ucitaj1</button>
-            <input type="file" id="fileInput">
+            <button onclick="addRow()" class = "buttons">Dodaj red</button>
+            <button onclick="calculateAll()" class ="calculate buttons">Izracunaj sve</button>
+            <button onclick="saveData()" class = "save buttons">Sacuvaj</button>
+            <button onclick="writeData()" class = "write buttons">Ucitaj</button>
+            <button onclick="saveDataWholeBoardOption()" class = "saveWholeBoardOption buttons">Sacuvaj</button>
+            <button onclick="writeDataWholeBoardOption()" class = "writeWholeBoardOption buttons">Ucitaj</button>
+            <input type="file" id="fileInput" class ="buttons">
+            <button id="toggleResults">Prikazi rezultate</button>
+
             <pre id="fileContents"></pre>
         </div>
 		<div id="inputs">
@@ -52,19 +54,19 @@
 
         <div class = "areaPlusWaste">
             <label for="areaPlusWasteInfoText" class="areaPlusWasteInfoText">Suma povrsine + 10 %</label> 
-            <input type="number" class="areaPlusWasteField"> 
+            <input type="number" class="areaPlusWasteField" disabled> 
             <label class="areaPlusWasteInfoText">m2</label>
         </div>
 
             <div class ='sum-result'>
                 <label for="sum" class="sum">Suma povrsine</label> 
-                <input type="number" class="sumField"> 
+                <input type="number" class="sumField" disabled> 
                 <label class="sum">m2</label>
             </div>
 
             <div class = "sum-result-with-waste">
                 <label for="sumWithWaste" class="sumWithWaste">Suma povrsine sa otpadom</label> 
-                <input type="number" class="sumWithWasteField"> 
+                <input type="number" class="sumWithWasteField" disabled> 
                 <label class="sumWithWaste">m2</label>
             </div>
 
@@ -77,31 +79,31 @@
 
             <div class = "side-processing-length">
                 <label for="sideLength" class="sideLength">Duzina kantovanja</label> 
-                <input type="number" class="side-proccessing-field"> 
+                <input type="number" class="side-proccessing-field" disabled> 
                 <label class="sideLength">m</label>
             </div>
 
             <div class = "side-processing-length-with-waste">
                 <label for="sideProcessingTotalInfoText" class="sideProcessingTotalInfoText"> Duzina kantovanja sa otpadom</label> 
-                <input type="number" class="sideProcessingField"> 
+                <input type="number" class="sideProcessingField" disabled> 
                 <label class="sideProcessingTotalInfoText">m</label>
             </div>
 <div class = "totalPricing">
             <div class = "sumPrice">
                 <label for="sumPriceInfoText" class="sumPriceInfoText">Ukupna cena materijala</label> 
-                <input type="number" class="sumPriceFiled"> 
+                <input type="number" class="sumPriceFiled" disabled> 
                 <label class="sumPriceInfoText">rsd</label>
             </div>
 
             <div class = "sideProcessingPrice">
                 <label for="sideProcessingPriceInfoText" class="sideProcessingPriceInfoText">Ukupna cena kantovanja</label> 
-                <input type="number" class="sideProcessingSum"> 
+                <input type="number" class="sideProcessingSum" disabled> 
                 <label class="sideProcessingPriceInfoText">rsd</label>
             </div>
 
             <div class = "priceSum">
                 <label for="priceInfoText" class="priceInfoText">Ukupna cena</label> 
-                <input type="number" class="totalAmmount"> 
+                <input type="number" class="totalAmmount" disabled> 
                 <label class="priceInfoText">rsd</label>
             </div>
 </div>

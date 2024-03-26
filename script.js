@@ -12,7 +12,7 @@ function addRow() {
         <label for="width">Sirina:</label>
         <input type="number" class="width" placeholder="Unesi sirinu">
         <label for="result">Povrsina</label>
-        <input type="number" class="result">
+        <input type="number" class="result" disabled>
         <label for="lengthSide">Kant po duzini</label>
         <input type="checkbox" class="lengthSideCheckbox">
         <input type="checkbox" class="lengthSideCheckbox">
@@ -20,7 +20,7 @@ function addRow() {
         <input type="checkbox" class="widthSideCheckbox">
         <input type="checkbox" class="widthSideCheckbox">
         <label for="sideProcessing">Duzina kantovanja</label>
-        <input type="number" class="sideProcessingresult">
+        <input type="number" class="sideProcessingresult" disabled>
     </form>
     `;
     inputsDiv.appendChild(newInputRow);
@@ -323,6 +323,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+    let toggleButton = document.getElementById('toggleResults');
+    let resultsDiv = document.querySelector('.end-results');
+    resultsDiv.style.display = 'none'
+    // Add click event listener to the button
+    toggleButton.addEventListener('click', function() {
+        // Toggle the visibility of the results div
+        if (resultsDiv.style.display === 'none') {
+            resultsDiv.style.display = 'block';
+        } else {
+            resultsDiv.style.display = 'none';
+        }
+    });
 
 
 function calculateAll(){
