@@ -5,7 +5,9 @@ prepravljena funkcionalnost cuvanja i citanja za opciju cele ploce
 TODO:
 
 - pristupiti ulepsavanju koda, odnosno uklanjanje nepotrebnih stvari i slicno
--poraditi malo na dizajnu i deployovati koristeci github
+-poraditi malo na dizajnu i deployovati koristeci github - radim na tome
 -popraviti: kada se odabere cela ploca pa se izracuna, nakon vracanja na regularan flow (slider off) ostaje zakucana 
 cena od cele ploce
  - kod cuvanja prepraviti: write() pozivam u oba slucaj i za celu tablu, tu je greska - POPRAVLJENO
+
+-trenutno prepravljam ceo kontent end-resulta - koncept sto je do sada napravljen je ok

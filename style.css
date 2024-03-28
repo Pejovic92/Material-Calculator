@@ -26,12 +26,13 @@ h2 {
 	display: block;
 	width: auto;
 	height: auto;
-
 }
 
 h3 {
 	margin-bottom: 15px;
     text-align: center;
+    color: purple;
+    font-family: 'Gill Sans';
 }
 
 .container {
@@ -52,13 +53,11 @@ h3 {
     height: 40px;
     margin-top: 30px;
     margin-bottom: 50px;
-
 }
 .length, .width, .result, .sideProcessingresult{
     background-color: rgb(219, 244, 222);
     height: 22px;
     border: 1px solid rgb(143, 95, 231)
-   
 }
 
 button{
@@ -69,24 +68,13 @@ button{
     top: 5px;
 }
 
-label {
-    color: rgb(143, 95, 231);
-    font-size: 17px;
-    margin-right: 10px;
-    margin-left:30px;
-    margin-bottom: 30px;
-}
-
 .rowNumber{
-  
     width: 20px;
     display: inline-block;
 }
 .input-row{
     /* margin-bottom: 10px; */
     height: 30px;
-
-  
 }
 .end-results{
     padding-top: 40px;
@@ -94,62 +82,36 @@ label {
     color: rgb(127, 228, 127);
     border: 1px solid rgb(142, 55, 228);
 	/* position: relative; */
-	text-align: left;
-	width: fit-content;
+	/* text-align: left; */
+	width:650px;
 	margin: 0 auto;
     margin-top: 20px;
+    display:flex;
+    justify-content: space-between; 
+    flex-direction: column;
+    align-items: center;
 }
-.sum{
-    color:rgb(127, 228, 127);
-    padding-right: 129px;
-}
-.materialInfoText{
-	color:rgb(127, 228, 127);
-    padding-right:123px;
-}
-.sumWithWaste{
-    color:rgb(127, 228, 127);
-    padding-right:35px;
-}
-.sumPriceInfoText{
-	color:rgb(127, 228, 127);
-	padding-right:63px;
-}
-.sideProcessingInfoText{
-    color:rgb(127, 228, 127);
-    padding-right:114px;
+.lengthLabel, .widthLabel, .resultLabel, .lengthSideLabel, .widthSideLabel, .sideProcessingLabel, .rowNumber{
+    color: purple;
+    padding-left: 40px;
+    padding-right: 10px;
+    font-family:'Gill Sans';
 }
 
+#inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .pricing {
     padding-bottom:10px;
 }
 .totalPricing{
     padding-top:20px;
 }
-.sideProcessingPriceInfoText{
-    color:rgb(127, 228, 127);
-    padding-right:55px;
-}
-.sideLength{
-    color:rgb(127, 228, 127);
-    padding-right:102px;
-}
-.sideProcessingTotalInfoText{
-    color:rgb(127, 228, 127);
-    padding-right:8px;
-}
 .priceInfoText{
     color:rgb(255, 0, 89);
-    padding-right:143px;
-}
-.mandatoryAreaInfoText{
-    color:rgb(127, 228, 127);
-    padding-right:104px;
-}
-
-.areaPlusWasteInfoText{
-    color:rgb(127, 228, 127);
-    padding-right:69px;
+    /* padding-right:143px; */
 }
 #fileInput{
     height: 25px;
@@ -166,10 +128,11 @@ label {
     padding-left: 30px;
 }
 
-.sliderInfotext {
+.infoText {
     margin: 0px; /* Adjust margin between label and slider */
     padding-right: 20px;
-    color:rgb(127, 228, 127);
+    color:purple;
+    font-family: 'Gill Sans';
 }
             
 
@@ -199,19 +162,14 @@ input[type="range"]::-webkit-slider-thumb {
     
   }
   input[type="range"].on::-webkit-slider-thumb {
-    background-color: #20bb4c;
-    
+    background-color: #20bb4c; 
   }
 
-.info-message, .sum-result, .sum-result-with-waste, .materialPrice, .sumPrice, .sideProcessing, .sideProcessingPrice, .side-processing-length, .priceSum, .mandatoryAreaOfBoards, .areaPlusWaste {
- 	/* position: relative;
-	left: 450px; */
-	/* display: block; */
-	/* width: auto; */
-	/* height: auto; */
-	margin: 5px auto;
-}
-
+  input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    vertical-align: middle;
+  }
 
 table {
     background-color: rgb(234, 228, 240);
@@ -238,4 +196,37 @@ td{
 }
 .buttons{
     cursor: pointer;
+    font-family:'Gill Sans';
+}
+
+
+.results {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 95%;
+    flex: 1;
+    margin-bottom: 10px;
+    padding-left: 20px;
+} 
+ .label {
+    flex: 1;
+    color: rgb(146, 18, 146);
+    font-family: 'Gill Sans';
+
+}
+.input{
+    flex: 1;
+    display: flex;
+    justify-content:center;
+
+   
+
+}
+.label-unit{
+    display: flex;
+    justify-content: flex-end; 
+    width: 100px; 
+    color: rgb(146, 18, 146);
+    font-family: 'Gill Sans';
 }

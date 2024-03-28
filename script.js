@@ -7,19 +7,19 @@ function addRow() {
     newInputRow.innerHTML = `
     <form>
         <label for="rowNumber" class="rowNumber" >${rowCounter}</label>
-        <label for="length">Duzina:</label>
-        <input type="number" class="length" placeholder="Unesi duzinu">
-        <label for="width">Sirina:</label>
-        <input type="number" class="width" placeholder="Unesi sirinu">
-        <label for="result">Povrsina</label>
+        <label for="length" class="lengthLabel">Duzina:</label>
+        <input type="number" class="length" placeholder="Unesi duzinu:">
+        <label for="width" class="widthLabel">Sirina:</label>
+        <input type="number" class="width" placeholder="Unesi sirinu:">
+        <label for="result" class="resultLabel">Povrsina</label>
         <input type="number" class="result" disabled>
-        <label for="lengthSide">Kant po duzini</label>
+        <label for="lengthSide" class="lengthSideLabel">Kant po duzini:</label>
         <input type="checkbox" class="lengthSideCheckbox">
         <input type="checkbox" class="lengthSideCheckbox">
-        <label for="widthSide">Kant po sirini</label>
+        <label for="widthSide" class="widthSideLabel">Kant po sirini:</label>
         <input type="checkbox" class="widthSideCheckbox">
         <input type="checkbox" class="widthSideCheckbox">
-        <label for="sideProcessing">Duzina kantovanja</label>
+        <label for="sideProcessing" class="sideProcessingLabel">Duzina kantovanja:</label>
         <input type="number" class="sideProcessingresult" disabled>
     </form>
     `;
@@ -171,119 +171,38 @@ function calculateTotalPrice(){
     result.value = parseFloat(materialCost) + parseFloat(sideProcessingMaterialCost);
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     let hideWasteSlider = document.getElementById("hideWasteSlider");
-//     let sumResult = document.querySelector('.sum-result')
-//     let sumResultWithWaste = document.querySelector(".sum-result-with-waste");
-//     let infoText = document.querySelector(".addWasteInfoText");
-//     let mandatoryArea = document.querySelector(".mandatoryAreaOfBoards");
-//     let sumAreaPlusWaste = document.querySelector('.areaPlusWaste');
-
-//     mandatoryArea.style.display = "none";
-//     sumAreaPlusWaste.style.display = "none";
-
-//     hideWasteSlider.addEventListener("input", function () {
-//         if (hideWasteSlider.value == 0) {
-//             sumResultWithWaste.style.display = "block";
-//             infoText.style.display = "block";
-//             sumResult.style.display = "block";
-//             mandatoryArea.style.display = "none";
-//             sumAreaPlusWaste.style.display = "none";
-
-//         } else if (hideWasteSlider.value == 1){
-//             sumResultWithWaste.style.display = "none";
-//             infoText.style.display = "none";
-//             sumResult.style.display = "none";
-//             mandatoryArea.style.display = "block"
-//             sumAreaPlusWaste.style.display = "block";
-//         }
-//     });
-// });
-// document.getElementById('hideWasteSlider').addEventListener('input', function() {
-//     if (this.value > 0) {
-//       this.classList.add('on');
-//     } else {
-//       this.classList.remove('on');
-//     }
-//   });   
-
-
-// const slider = document.getElementById('hideWasteSlider');
-
-// slider.addEventListener('input', function() {
-
-//     let totalMaterialCostField = document.querySelector('.sumPriceFiled');
-//     let sideProcessingCost = document.querySelector('.sideProcessingSum');
-//     let sumPrice = document.querySelector('.totalAmmount');
-
-
-//     if (parseFloat(this.value) === 1) {
-
-//         document.querySelector('.calculate').addEventListener('click', function() {
-//             let result =  document.querySelector('.mandatoryAreaField');
-//             let resultPlusWaste = document.querySelector('.areaPlusWasteField');
-//             let oneBoardArea = Number((2.8 * 2.07).toFixed(3))
-//             let sumAreaValue = parseFloat (document.querySelector(".sumField").value * 1.1); // dodavanje 10% na povrsinu
-//             let materialPrice = document.querySelector('.priceOfMaterial')
-           
-//             let sumPlusWaste = document.querySelector('.sumWithWasteField')
-//             let totalPrice = document.querySelector('.totalAmmount');
-            
-
-//             resultPlusWaste.value = sumAreaValue.toFixed(3);
-
-//             if(sumAreaValue>=oneBoardArea){
-//                 let multiplier = Math.ceil(sumAreaValue/oneBoardArea);
-//                 result.value =  (multiplier* oneBoardArea).toFixed(3)
-//                 totalMaterialCostField.value = result.value * materialPrice.value;
-             
-//             }
-//             else{
-//                 result.value = oneBoardArea.toFixed(3);
-//                 totalMaterialCostField.value = result.value * materialPrice.value
-//             }
-            
-
-//              sumPrice.value = Number(totalMaterialCostField.value) + Number(sideProcessingCost.value);
-             
-//         })
-
- 
-//     } else if(parseFloat(this.value) === 0){
-//     }
-// });
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 document.addEventListener("DOMContentLoaded", function () {
     let hideWasteSlider = document.getElementById("hideWasteSlider");
-    let sumResult = document.querySelector('.sum-result')
+    let sumResult = document.querySelector('.sum-result') 
     let sumResultWithWaste = document.querySelector(".sum-result-with-waste");
     let infoText = document.querySelector(".addWasteInfoText");
     let mandatoryArea = document.querySelector(".mandatoryAreaOfBoards");
-    let sumAreaPlusWaste = document.querySelector('.areaPlusWaste');
-    let totalMaterialCostField = document.querySelector('.sumPriceFiled');
+    let sumAreaPlusWaste = document.querySelector('.areaPlusWaste'); 
+    let totalMaterialCostField = document.querySelector('.sumPriceFiled');//testiranje
     let sideProcessingCost = document.querySelector('.sideProcessingSum');
     let sumPrice = document.querySelector('.totalAmmount');
 
     mandatoryArea.style.display = "none";
     sumAreaPlusWaste.style.display = "none";
+    
 
     hideWasteSlider.addEventListener("input", function () {
         if (hideWasteSlider.value == 0) {
-            sumResultWithWaste.style.display = "block";
-            infoText.style.display = "block";
-            sumResult.style.display = "block";
+            sumResultWithWaste.style.display = "flex";
+            infoText.style.display = "flex";
+            sumResult.style.display = "flex";
             mandatoryArea.style.display = "none";
             sumAreaPlusWaste.style.display = "none";
+ 
+        
         } else if (hideWasteSlider.value == 1) {
             sumResultWithWaste.style.display = "none";
             infoText.style.display = "none";
             sumResult.style.display = "none";
-            mandatoryArea.style.display = "block"
-            sumAreaPlusWaste.style.display = "block";
+            mandatoryArea.style.display = "flex"
+            sumAreaPlusWaste.style.display = "flex";
+        
         }
     });
 
@@ -326,7 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let toggleButton = document.getElementById('toggleResults');
     let resultsDiv = document.querySelector('.end-results');
-    resultsDiv.style.display = 'none'
+    //resultsDiv.style.display = 'none'
     // Add click event listener to the button
     toggleButton.addEventListener('click', function() {
         // Toggle the visibility of the results div

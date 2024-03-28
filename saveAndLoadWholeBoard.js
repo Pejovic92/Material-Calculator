@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     hideWasteSlider.addEventListener("input", function () {
         if (hideWasteSlider.value == 0) {
-            sumResultWithWaste.style.display = "block";
-            infoText.style.display = "block";
-            sumResult.style.display = "block";
+            sumResultWithWaste.style.display = "flex";
+            infoText.style.display = "flex";
+            sumResult.style.display = "flex";
             saveButton.style.display = 'inline-block';
             writeButton.style.display = 'inline-block';
             saveButtonWholeBoardOption.style.display = 'none';
@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
             sumResult.style.display = "none";
             saveButton.style.display = 'none'
             writeButton.style.display = 'none'
-            mandatoryArea.style.display = "block"
-            sumAreaPlusWaste.style.display = "block";
+            mandatoryArea.style.display = "flex"
+            sumAreaPlusWaste.style.display = "flex";
             saveButtonWholeBoardOption.style.display = 'inline-block';
             writeButtonWholeBoardOption.style.display = 'inline-block';
         }
