@@ -213,15 +213,11 @@ td{
     flex: 1;
     color: rgb(146, 18, 146);
     font-family: 'Gill Sans';
-
 }
 .input{
     flex: 1;
     display: flex;
     justify-content:center;
-
-   
-
 }
 .label-unit{
     display: flex;
@@ -229,4 +225,13 @@ td{
     width: 100px; 
     color: rgb(146, 18, 146);
     font-family: 'Gill Sans';
+}
+.inputField {
+    background-color:  rgb(219, 244, 222);
+    border: 1px solid rgb(146, 18, 146);
+    height: 20px;
+    width: 160px;
+}
+.spacing{
+    padding-top: 15px;
 }
