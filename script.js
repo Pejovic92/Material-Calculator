@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let infoText = document.querySelector(".addWasteInfoText");
     let mandatoryArea = document.querySelector(".mandatoryAreaOfBoards");
     let sumAreaPlusWaste = document.querySelector('.areaPlusWaste'); 
-    let totalMaterialCostField = document.querySelector('.sumPriceFiled');//testiranje
+    let totalMaterialCostField = document.querySelector('.sumPriceFiled');
     let sideProcessingCost = document.querySelector('.sideProcessingSum');
     let sumPrice = document.querySelector('.totalAmmount');
 
@@ -245,12 +245,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let toggleButton = document.getElementById('toggleResults');
     let resultsDiv = document.querySelector('.end-results');
-    //resultsDiv.style.display = 'none'
-    // Add click event listener to the button
+    resultsDiv.style.display = 'none'
+
     toggleButton.addEventListener('click', function() {
-        // Toggle the visibility of the results div
         if (resultsDiv.style.display === 'none') {
-            resultsDiv.style.display = 'block';
+            resultsDiv.style.display = 'flex';
         } else {
             resultsDiv.style.display = 'none';
         }
