@@ -5,120 +5,106 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-
-	<h1>Kalkulator materijala</h1>
+	<h1 class="infoText">Kalkulator materijala</h1>
 
 	<div class="container">
         <div id="menu">
-            <button onclick="addRow()">Dodaj red</button>
-            <!-- <button onclick="calculateArea()">Izracunaj povrsinu</button>
-            <button onclick="calculateSum()">Izracunaj sumu</button>
-            <button onclick="calculateSumPlusWaste()">Izracunaj sumu sa otpadom</button>
-            <button onclick="calculatePrice()">Izracunaj cenu materijala</button> -->
-            <button onclick="calculateAll()" class ="calculate">Izracunaj sve</button>
-            <!-- <button onclick="calculateSide()">Izracunaj kantovanje</button>
-            <button onclick="calculateSideSum()">Izracunaj ukupnu duzinu kantovanja</button>
-            <button onclick="calculateSideSumPlusWaste()">Izracunaj ukupnu duzinu kantovanja sa otpadom </button> -->
-            <button onclick="saveData()">Sacuvaj</button>
-            <button onclick="writeData()">Ucitaj</button>
-            <input type="file" id="fileInput">
+            <button onclick="addRow()" class = "buttons">Dodaj red</button>
+            <button onclick="calculateAll()" class ="calculate buttons">Izracunaj sve</button>
+            <button onclick="saveData()" class = "save buttons">Sacuvaj</button>
+            <button onclick="writeData()" class = "write buttons">Ucitaj</button>
+            <button onclick="saveDataWholeBoardOption()" class = "saveWholeBoardOption buttons">Sacuvaj</button>
+            <button onclick="writeDataWholeBoardOption()" class = "writeWholeBoardOption buttons">Ucitaj</button>
+            <input type="file" id="fileInput" class ="buttons">
+            <button id="toggleResults" class ="buttons">Prikazi rezultate</button>
             <pre id="fileContents"></pre>
         </div>
 		<div id="inputs">
-            </div>
-           
+        </div>   
 		</div>
-
-
-		<div class="end-results">
-			<h2>Rezultati</h2>
+<div class="end-results">
+			<h2 class="infoText">Rezultati</h2>
 
             <div class = "rangeSlider">
-            <label for="sliderInfotext", class="sliderInfotext"> Da li se kupuje cela ploca ? </label>
+            <label for="sliderInfotext", class="infoText"> Da li se kupuje cela ploca ? </label>
             <input type="range" min="0" max="1" value="0" class="slider" id="hideWasteSlider">
             </div>
 			
-			<div class="info-message">
+			<div class="info-message" >
                 <h3 class = "addWasteInfoText">Na ukupnu povrsinu elemenata, dodaje se otpad, koji iznosi 15%</h3>
                 <h3>Na ukupnu duzinu kantovanja, dodaje se otpad, koji iznosi 10 %</h3>
             </div>
 
-        <div class="pricing">
-            <div class = "materialPrice">
-                <label for="materialInfoText" class="materialInfoText">Cena materijala</label> 
-                <input type="number" class="priceOfMaterial"> 
-                <label class="materialInfoText">rsd/m2</label>
+            <div class="materialPrice results">
+                <div class="label"><label for="price">Cena materijala</label> </div>
+                <div class="input"><input type="number" id="price" class="priceOfMaterial"> </div>
+                <div class="label-unit"><label>rsd/m2</label></div>
+            </div>
+
+            <div class = "sideProcessing results">
+                <div class="label"><label for="sideProcesing">Cena kantovanja</label> </div>
+                <div class="input"><input type="number" id="sideProcesing" class="sideProcessingAmount"> </div>
+                <div class="label-unit"><label>rsd/m</label></div>
+            </div> 
+
+            <div class = "areaPlusWaste results"> 
+                <div class="label"><label for="areaPlusWaste10">Suma povrsine + 10 %</label> </div>
+                <div class="input"> <input type="number" id="areaPlusWaste10" class="areaPlusWasteField" disabled> </div>
+                <div class="label-unit"><label>m2</label></div>
+            </div> 
+
+            <div class ="sum-result results">
+                <div class="label"><label for="sum">Suma povrsine</label> </div>
+                <div class="input"><input type="number" id="sum" class="sumField" disabled> </div>
+                <div class="label-unit"> <label>m2</label> </div>
+            </div>
+
+            <div class = "sum-result-with-waste results">
+                <div class="label"> <label for="sumWithWaste">Suma povrsine sa otpadom</label> </div> 
+                <div class="input"><input type="number" id="sumWithWaste" class="sumWithWasteField" disabled> </div>
+                <div class="label-unit"><label>m2</label> </div>
+            </div>
+
+            <div class = "mandatoryAreaOfBoards results">
+                <div class="label"><label for="mandatoryAreaOfBoards">Potrebna povrsina</label> </div>
+                <div class="input"><input type="number" id="mandatoryAreaOfBoards" class="mandatoryAreaField"> </div>
+                <div class="label-unit"><label>m2</label></div>
             </div>
 
 
-            <div class = "sideProcessing">
-                <label for="sideProcessingInfoText" class="sideProcessingInfoText">Cena kantovanja</label> 
-                <input type="number" class="sideProcessingAmount"> 
-                <label class="sideProcessingInfoText">rsd/m</label>
-            </div>
-        </div>
-
-        <div class = "areaPlusWaste">
-            <label for="areaPlusWasteInfoText" class="areaPlusWasteInfoText">Suma povrsine + 10 %</label> 
-            <input type="number" class="areaPlusWasteField"> 
-            <label class="areaPlusWasteInfoText">m2</label>
-        </div>
-
-            <div class ='sum-result'>
-                <label for="sum" class="sum">Suma povrsine</label> 
-                <input type="number" class="sumField"> 
-                <label class="sum">m2</label>
+            <div class = "side-processing-length results">
+                <div class="label"><label for="sideProcessingLength">Duzina kantovanja</label> </div>
+                <div class="input"><input type="number" id="sideProcessingLength" class="side-proccessing-field" disabled> </div>
+                <div class="label-unit"><label>m</label></div>
             </div>
 
-            <div class = "sum-result-with-waste">
-                <label for="sumWithWaste" class="sumWithWaste">Suma povrsine sa otpadom</label> 
-                <input type="number" class="sumWithWasteField"> 
-                <label class="sumWithWaste">m2</label>
+            <div class = "side-processing-length-with-waste results">
+                <div class="label"> <label for="sideProcessingLengthWithWaste"> Duzina kantovanja sa otpadom</label> </div>
+                <div class="input"> <input type="number" id="sideProcessingLengthWithWaste" class="sideProcessingField" disabled> </div>
+                <div class="label-unit"> <label>m</label></div>
             </div>
 
-            <div class = "mandatoryAreaOfBoards">
-                <label for="mandatoryAreaInfoText" class="mandatoryAreaInfoText">Potrebna povrsina</label> 
-                <input type="number" class="mandatoryAreaField"> 
-                <label class="mandatoryAreaInfoText">m2</label>
+            <div class = "sumPrice results">
+                <div class="label"> <label for="totalMaterialPrice">Ukupna cena materijala</label></div> 
+                <div class="input"> <input type="number" id="totalMaterialPrice" class="sumPriceFiled" disabled> </div> 
+                <div class="label-unit"> <label>rsd</label> </div> 
             </div>
 
-
-            <div class = "side-processing-length">
-                <label for="sideLength" class="sideLength">Duzina kantovanja</label> 
-                <input type="number" class="side-proccessing-field"> 
-                <label class="sideLength">m</label>
+            <div class = "sideProcessingPrice results">
+                <div class="label"> <label for="totalSideProcessingPrice">Ukupna cena kantovanja</label> </div> 
+                <div class="input"> <input type="number" id="totalSideProcessingPrice" class="sideProcessingSum" disabled> </div>
+                <div class="label-unit"><label>rsd</label></div>
             </div>
 
-            <div class = "side-processing-length-with-waste">
-                <label for="sideProcessingTotalInfoText" class="sideProcessingTotalInfoText"> Duzina kantovanja sa otpadom</label> 
-                <input type="number" class="sideProcessingField"> 
-                <label class="sideProcessingTotalInfoText">m</label>
-            </div>
-<div class = "totalPricing">
-            <div class = "sumPrice">
-                <label for="sumPriceInfoText" class="sumPriceInfoText">Ukupna cena materijala</label> 
-                <input type="number" class="sumPriceFiled"> 
-                <label class="sumPriceInfoText">rsd</label>
-            </div>
-
-            <div class = "sideProcessingPrice">
-                <label for="sideProcessingPriceInfoText" class="sideProcessingPriceInfoText">Ukupna cena kantovanja</label> 
-                <input type="number" class="sideProcessingSum"> 
-                <label class="sideProcessingPriceInfoText">rsd</label>
-            </div>
-
-            <div class = "priceSum">
-                <label for="priceInfoText" class="priceInfoText">Ukupna cena</label> 
-                <input type="number" class="totalAmmount"> 
-                <label class="priceInfoText">rsd</label>
+            <div class = "priceSum results">
+                <div class="label"> <label for="totalCost">Ukupna cena</label> </div>
+                <div class="input"> <input type="number" id="totalCost" class="totalAmmount" disabled> </div>
+                <div class="label-unit"> <label>rsd</label></div>
             </div>
 </div>
 
-		
-		</div>
-	</div>
-
 	<script src="script.js"></script>
     <script src="saveAndLoad.js"></script>
+    <script src="saveAndLoadWholeBoard.js"></script>
 </body>
 </html>
