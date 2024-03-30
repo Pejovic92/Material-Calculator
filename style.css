@@ -235,3 +235,6 @@ td{
 .spacing{
     padding-top: 15px;
 }
+.valueInput{
+    width: 100px;
+}
