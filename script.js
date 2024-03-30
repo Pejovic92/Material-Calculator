@@ -8,11 +8,11 @@ function addRow() {
     <form>
         <label for="rowNumber" class="rowNumber" >${rowCounter}</label>
         <label for="length" class="lengthLabel">Duzina:</label>
-        <input type="number" class="length" placeholder="Unesi duzinu:">
+        <input type="number" class="length valueInput" placeholder="Unesi duzinu:">
         <label for="width" class="widthLabel">Sirina:</label>
-        <input type="number" class="width" placeholder="Unesi sirinu:">
+        <input type="number" class="width valueInput" placeholder="Unesi sirinu:">
         <label for="result" class="resultLabel">Povrsina</label>
-        <input type="number" class="result" disabled>
+        <input type="number" class="result valueInput" disabled>
         <label for="lengthSide" class="lengthSideLabel">Kant po duzini:</label>
         <input type="checkbox" class="lengthSideCheckbox">
         <input type="checkbox" class="lengthSideCheckbox">
@@ -20,7 +20,7 @@ function addRow() {
         <input type="checkbox" class="widthSideCheckbox">
         <input type="checkbox" class="widthSideCheckbox">
         <label for="sideProcessing" class="sideProcessingLabel">Duzina kantovanja:</label>
-        <input type="number" class="sideProcessingresult" disabled>
+        <input type="number" class="sideProcessingresult valueInput" disabled>
     </form>
     `;
     inputsDiv.appendChild(newInputRow);
