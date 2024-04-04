@@ -17,6 +17,7 @@
             <button onclick="writeDataWholeBoardOption()" class = "writeWholeBoardOption buttons">Ucitaj</button>
             <input type="file" id="fileInput" class ="buttons">
             <button id="toggleResults" class ="buttons">Rezultati-forma</button>
+            <button onclick="openNewPage()" class="newPageButton buttons">Potreban okov - forma</button>
             <pre id="fileContents"></pre>
         </div>
 		<div id="inputs">
@@ -47,7 +48,7 @@
                 <div class="label-unit"><label>rsd/m</label></div>
             </div> 
 
-            <div class = "areaPlusWaste results"> 
+            <div class = "areaPlusWaste results spacing"> 
                 <div class="label"><label for="areaPlusWaste10">Suma povrsine + 10 %</label> </div>
                 <div class="input"> <input type="number" id="areaPlusWaste10" class="areaPlusWasteField inputField" disabled> </div>
                 <div class="label-unit"><label>m2</label></div>
@@ -95,7 +96,7 @@
                 <div class="label-unit"><label>rsd</label></div>
             </div>
 
-            <div class =" spacing results">
+            <div class ="spacing results">
                 <div class="label"> <label for="totalCost">Ukupna cena</label> </div>
                 <div class="input"> <input type="number" id="totalCost" class="totalAmmount inputField" disabled> </div>
                 <div class="label-unit"> <label>rsd</label></div>
