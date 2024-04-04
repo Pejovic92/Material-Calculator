@@ -7,11 +7,11 @@ function addRow() {
     newInputRow.innerHTML = `
     <form>
         <label for="rowNumber" class="rowNumber" >${rowCounter}</label>
-        <label for="length" class="lengthLabel">Duzina:</label>
+        <label for="length" class="lengthLabel">Duzina (mm):</label>
         <input type="number" class="length valueInput" placeholder="Unesi duzinu:">
-        <label for="width" class="widthLabel">Sirina:</label>
+        <label for="width" class="widthLabel">Sirina (mm):</label>
         <input type="number" class="width valueInput" placeholder="Unesi sirinu:">
-        <label for="result" class="resultLabel">Povrsina</label>
+        <label for="result" class="resultLabel">Povrsina (m2)</label>
         <input type="number" class="result valueInput" disabled>
         <label for="lengthSide" class="lengthSideLabel">Kant po duzini:</label>
         <input type="checkbox" class="lengthSideCheckbox">
@@ -19,7 +19,7 @@ function addRow() {
         <label for="widthSide" class="widthSideLabel">Kant po sirini:</label>
         <input type="checkbox" class="widthSideCheckbox">
         <input type="checkbox" class="widthSideCheckbox">
-        <label for="sideProcessing" class="sideProcessingLabel">Duzina kantovanja:</label>
+        <label for="sideProcessing" class="sideProcessingLabel">Duzina kantovanja (m):</label>
         <input type="number" class="sideProcessingresult valueInput" disabled>
     </form>
     `;
@@ -82,7 +82,8 @@ function calculatePrice() {
     let materialPrice = document.querySelector('.priceOfMaterial').value;
     let resultPlaceholder = document.querySelector('.sumWithWasteField').value;
     let sumResultPlaceholder = document.querySelector('.sumPriceFiled');
-    sumResultPlaceholder.value = (resultPlaceholder*materialPrice).toFixed(0)
+    sumResultPlaceholder.value = (resultPlaceholder*materialPrice).toFixed(4);
+    console.log(sumResultPlaceholder.value);
 
     // izracunavanje cene kantovanja
     let sideProcessingUnitPrice = document.querySelector('.sideProcessingAmount').value;
@@ -228,10 +229,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (sumAreaValue >= oneBoardArea) {
                 let multiplier = Math.ceil(sumAreaValue / oneBoardArea);
                 result.value =  (multiplier * oneBoardArea).toFixed(3);
-                totalMaterialCostField.value = result.value * materialPrice.value;
+                totalMaterialCostField.value = (result.value * materialPrice.value).toFixed(0);
             } else {
                 result.value = oneBoardArea.toFixed(3);
-                totalMaterialCostField.value = result.value * materialPrice.value;
+                totalMaterialCostField.value = (result.value * materialPrice.value).toFixed(0);
             }
 
             sumPrice.value = Number(totalMaterialCostField.value) + Number(sideProcessingCost.value);
@@ -254,6 +255,10 @@ document.addEventListener("DOMContentLoaded", function () {
             resultsDiv.style.display = 'none';
         }
     });
+
+    function openNewPage() {
+        window.open("furnitureHardware.html", "_blank");
+    }
 
 
 function calculateAll(){

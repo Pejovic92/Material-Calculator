@@ -12,8 +12,8 @@ cena od cele ploce
 -trenutno prepravljam ceo kontent end-resulta - URADJENO
 -resiti problem sa kreiranjem pull requesta
 
--za sada imam osnovnu verziju koju mogu deployovati !!!
+-za sada imam osnovnu verziju koju mogu deployovati !!!- URADJENO
 -implementirati - feature da mogu dodati redove, nesto kao textbox gde cu upisivati potreban okov gde ce se taj okov
-nadodati na ukupnu cenu kostanja proizvoda
+nadodati na ukupnu cenu kostanja proizvoda - URADJENO
 -mozda i prepravim uracunati otpad, odnosno da ne bude fiksan, vec da se po potrebi unese % - ali mislim da i nema potrebe
-zato sto je svakako procena ugrubo
+zato sto je svakako procena ugrubo - necu raditi ovo

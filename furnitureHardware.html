@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="furnitureHardwareStyle.css">
+    <title>Okov</title>
+</head>
+<body>
+    <h1 >Potreban okov</h1>
+ <div class="container">
+    <div class="menu">
+        <button onclick="addRow()" class = "buttons">Dodaj red</button>
+        <button onclick="calculateAll()" class = "buttons">Izracunaj sve</button>
+        <button onclick="saveData()" class = "buttons">Sacuvaj</button>
+        <button onclick="writeData()" class = "buttons">Ucitaj</button>
+        <input type="file" id="fileInput" class ="buttons">
+        <pre id="fileContents"></pre>
+    </div>
+    <div id="inputs">
+    </div> 
+    <div class="end-results">
+        <h2 class="infoText">Ukupna cena okova</h2>
+        <div class = "results">
+            <div class="label"><label for="sumPrice">Cena okova</label> </div>
+            <div class="input"><input type="number" id="sumPrice" class="sumPriceAmount" disabled> </div>
+            <div class="label-unit"><label>rsd</label></div>
+        </div> 
+    </div>
+ </div>
+
+
+ <script src="furnitureHardware.js"></script>
+ <script src="furnitureHardwareSaveAndLoad.js"></script>
+</body>
+</html>
