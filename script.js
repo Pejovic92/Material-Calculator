@@ -7,6 +7,10 @@ function addRow() {
     newInputRow.innerHTML = `
     <form>
         <label for="rowNumber" class="rowNumber" >${rowCounter}</label>
+
+        <label for="name" class="nameLabel">Ime elementa:</label>
+        <input type="text" class="name valueInput" placeholder="Unesi ime:">
+
         <label for="length" class="lengthLabel">Duzina (mm):</label>
         <input type="number" class="length valueInput" placeholder="Unesi duzinu:">
         <label for="width" class="widthLabel">Sirina (mm):</label>
@@ -82,7 +86,7 @@ function calculatePrice() {
     let materialPrice = document.querySelector('.priceOfMaterial').value;
     let resultPlaceholder = document.querySelector('.sumWithWasteField').value;
     let sumResultPlaceholder = document.querySelector('.sumPriceFiled');
-    sumResultPlaceholder.value = (resultPlaceholder*materialPrice).toFixed(4);
+    sumResultPlaceholder.value = (resultPlaceholder*materialPrice).toFixed(0);
     console.log(sumResultPlaceholder.value);
 
     // izracunavanje cene kantovanja

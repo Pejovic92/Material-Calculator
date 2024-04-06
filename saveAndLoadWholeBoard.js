@@ -82,6 +82,7 @@ function saveDataWholeBoardOption() {
 
     // Processing each row to extract its data
     rows.forEach(row => {
+        const nameInput = row.querySelector('.name').value;
         const lengthInput = row.querySelector('.length').value;
         const widthInput = row.querySelector('.width').value;
         const areaResult = row.querySelector('.result').value;
@@ -102,6 +103,7 @@ function saveDataWholeBoardOption() {
             }
         });
         const rowData = {
+            name:nameInput,
             length: lengthInput,
             width: widthInput,
             area: areaResult,
@@ -163,7 +165,8 @@ try {
     <h1>${data.modelName}</h1>
     <table border="1">
         <tr>
-            <th>Element</th>
+            <th>Broj elementa</th>
+            <th>Ime elementa</th>
             <th>Duzina elementa</th>
             <th>Sirina elementa</th>
             <th>Povrsina elementa</th>
@@ -178,6 +181,7 @@ try {
         newTab.document.write(`
         <tr>
         <td>${index + 1}</td>
+        <td>${row.name}</td>
         <td>${row.length} mm</td>
         <td>${row.width} mm</td>
         <td>${row.area} m2</td>
