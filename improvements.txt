@@ -17,3 +17,7 @@ cena od cele ploce
 nadodati na ukupnu cenu kostanja proizvoda - URADJENO
 -mozda i prepravim uracunati otpad, odnosno da ne bude fiksan, vec da se po potrebi unese % - ali mislim da i nema potrebe
 zato sto je svakako procena ugrubo - necu raditi ovo
+- dodati opciju za unos imena elementa (zbog reference na elemente u crtezu) - URADJENO
+- dodati opciju za editovanje sacuvanog fajla (desavace se da je potrebno nesto izmeniti, pa iz razloga da ne bi sve ispocetka
+morali upisivati elemente. samo ucitam sacuvani fajl pa na njemu radim izmene) - URADJENO
+- moram isto dodati opciju za editovanje okova -

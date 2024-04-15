@@ -1,12 +1,12 @@
 //funkcija za dodavanje reda
-let rowCounter = 1;
+ rowCounter = 1;
 function addRow() {
     let inputsDiv = document.getElementById('inputs');
     let newInputRow = document.createElement('div');
     newInputRow.className = 'input-row';
     newInputRow.innerHTML = `
     <form>
-        <label for="rowNumber" class="rowNumber" >${rowCounter}</label>
+        <label for="rowNumber" class="rowNumber" >${rowCounter++}</label>
 
         <label for="name" class="nameLabel">Ime elementa:</label>
         <input type="text" class="name valueInput" placeholder="Unesi ime:">
@@ -28,7 +28,7 @@ function addRow() {
     </form>
     `;
     inputsDiv.appendChild(newInputRow);
-    rowCounter = rowCounter+1
+    //rowCounter = rowCounter+1
 }
 
 function calculateArea() {
@@ -109,10 +109,16 @@ function calculateSide() {
         let widthInput = parseFloat(row.querySelector('.width').value) || 0;
         let resultInput = row.querySelector('.sideProcessingresult');
 
-   
+        console.log("Evo ga duzina",lengthInput )
+        console.log("Evo ga sirina",widthInput )
 
         let lengthCheckboxes = Array.from(row.querySelectorAll('.lengthSideCheckbox:checked')).length;
         let widthCheckboxes = Array.from(row.querySelectorAll('.widthSideCheckbox:checked')).length;
+
+        console.log("Evo ga cekirana duzina",lengthCheckboxes )
+        console.log("Evo ga cekirana sirina",widthCheckboxes )
+
+        
 
         let result = 0;
         if(lengthCheckboxes === 1 && widthCheckboxes=== 1){
@@ -140,6 +146,7 @@ function calculateSide() {
             result = (widthInput/1000)*2 
         }
         resultInput.value = result.toFixed(2)
+        console.log("Evo ga rezultat",resultInput.value )
     });
 }
 function calculateSideSum(){
@@ -187,10 +194,19 @@ document.addEventListener("DOMContentLoaded", function () {
     let totalMaterialCostField = document.querySelector('.sumPriceFiled');
     let sideProcessingCost = document.querySelector('.sideProcessingSum');
     let sumPrice = document.querySelector('.totalAmmount');
+    let areaPlusWaste = document.querySelector('.sumWithWasteField');
+    let materialPrice = document.querySelector('.priceOfMaterial');
+
+    let result =  document.querySelector('.mandatoryAreaField');
+    let resultPlusWaste = document.querySelector('.areaPlusWasteField');
+    let oneBoardArea = Number((2.8 * 2.07).toFixed(3));
+    let sumAreaValue = parseFloat(document.querySelector(".sumField").value * 1.1); // dodavanje 10% na povrsinu
+
 
     mandatoryArea.style.display = "none";
     sumAreaPlusWaste.style.display = "none";
     
+  
 
     hideWasteSlider.addEventListener("input", function () {
         if (hideWasteSlider.value == 0) {
@@ -242,7 +258,7 @@ document.addEventListener("DOMContentLoaded", function () {
             sumPrice.value = Number(totalMaterialCostField.value) + Number(sideProcessingCost.value);
         }
         else if (parseFloat(hideWasteSlider.value) === 0){
-            totalMaterialCostField.value = result.value * materialPrice.value;
+            totalMaterialCostField.value = areaPlusWaste.value * materialPrice.value;
             sumPrice.value = Number(totalMaterialCostField.value) + Number(sideProcessingCost.value);
         }
     });

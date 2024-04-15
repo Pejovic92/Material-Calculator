@@ -50,6 +50,7 @@ function saveDataWholeBoardOption() {
     const formData = {
         modelName: `Model: ${modulName}`,
         Napomena: "Kupuje se cela ploca !",
+        isWholeBoardMandatory :"Yes",
         individualElements: [], // Array to hold the data for each row
         summary: {} // Object to hold the summary data
     };
@@ -82,6 +83,7 @@ function saveDataWholeBoardOption() {
 
     // Processing each row to extract its data
     rows.forEach(row => {
+        const rowNumber = row.querySelector('.rowNumber').innerHTML;
         const nameInput = row.querySelector('.name').value;
         const lengthInput = row.querySelector('.length').value;
         const widthInput = row.querySelector('.width').value;
@@ -103,6 +105,7 @@ function saveDataWholeBoardOption() {
             }
         });
         const rowData = {
+            rowNumber: rowNumber,
             name:nameInput,
             length: lengthInput,
             width: widthInput,
