@@ -21,6 +21,7 @@ function saveData() {
 
     // Processing each row to extract its data
     rows.forEach(row => {
+        const rowNumber = row.querySelector('.rowNumber').innerHTML;
         const name = row.querySelector('.nameInput').value;
         const quantity = row.querySelector('.quantityInput').value;
         const unitPrice = row.querySelector('.priceInput').value;
@@ -28,6 +29,7 @@ function saveData() {
 
        
         const rowData = {
+            rowNumber:rowNumber,
             name: name,
             quantity: quantity,
             unitPrice: unitPrice,
