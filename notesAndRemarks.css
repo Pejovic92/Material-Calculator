@@ -1,0 +1,129 @@
+body {
+    padding: 30px;
+    height: 100vh;
+    background-color: #dce2de;
+  }
+  .menu {
+    text-align: center;
+    background-color: rgb(123, 65, 231);
+    border-style: solid;
+    border: 2px solid rgb(126, 78, 174);
+    border-radius: 10px;
+    height: 40px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color:purple;
+    font-family: 'Gill Sans';
+  }
+  .nameLabel,
+  .rowNumber {
+    color: purple;
+    padding-left: 40px;
+    padding-right: 20px;
+    font-family: "Gill Sans";
+  }
+  .input-row {
+    /* margin-bottom: 10px; */
+    height: 30px;
+  }
+  #inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .rowNumber {
+    width: 20px;
+    display: inline-block;
+  }
+  .nameInput {
+    width: 1200px;
+  }
+  .quantityInput,
+  .priceInput,
+  .valueInput {
+    width: 40px;
+  }
+  .sumPriceAmount {
+    width: 100px;
+  }
+  
+  /* Sakrivanje strelica */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .end-results {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid rgb(142, 55, 228);
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+  }
+  .infoText {
+    margin: 0px; /* Adjust margin between label and slider */
+    padding-right: 20px;
+    color: purple;
+    font-family: "Gill Sans";
+    padding-bottom: 20px;
+  }
+  .results {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    flex: 1;
+    margin-bottom: 10px;
+    padding-left: 20px;
+  }
+  .label {
+    flex: 1;
+    color: rgb(146, 18, 146);
+    font-family: "Gill Sans";
+  }
+  .input {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  .label-unit {
+    display: flex;
+    justify-content: flex-end;
+    width: 100px;
+    color: rgb(146, 18, 146);
+    font-family: "Gill Sans";
+    padding-right: 20px;
+  }
+  .inputField {
+    background-color: rgb(219, 244, 222);
+    border: 1px solid rgb(146, 18, 146);
+    height: 20px;
+    width: 160px;
+  }
+  
+  .buttons {
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: "Gill Sans";
+  }
+  
+  input[type="number"] {
+      text-align: center;
+    }
+  
+  .nameInput, .quantityInput, .priceInput, .valueInput, .sumPriceAmount{
+    background-color: rgb(219, 244, 222);
+    height: 18px;
+    border: 1px solid rgb(143, 95, 231)
+  }
+  
+  

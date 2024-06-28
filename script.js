@@ -280,6 +280,10 @@ document.addEventListener("DOMContentLoaded", function () {
         window.open("furnitureHardware.html", "_blank");
     }
 
+    function openNotesPage() {
+        window.open("notesAndRemarks.html", "_blank");
+    }
+
 
 function calculateAll(){
     calculateArea()
