@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" type="text/css" href="notesAndRemarks.css"> -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Odstupanje zidova</title>
+  </head>
+  <body>
+    <h1>Odstupanje zidova</h1>
+    <div class="container">
+      <button onclick="calculate()" class="buttons button-calculate">Izracunaj odstupanje</button>
+      <div class="menu">
+        <div class="row">
+          <label for="first-wall" class="label additional-services-label">Duzina prvog (duzeg) zida:</label>
+          <input type="text" class="result first-wall valueInput-additional-services" />
+        </div>
+
+        <div class="row">
+          <label for="second-wall" class="label additional-services-label">Duzina drugog (kraceg) zida:</label>
+          <input type="text" class="result second-wall valueInput-additional-services" />
+        </div>
+
+        <div class="row">
+          <label for="diagonal" class="label additional-services-label">Dijagonala:</label>
+          <input type="text" class="result diagonal valueInput-additional-services" />
+        </div>
+
+        <div class="row">
+          <label for="longerSide" class="label additional-services-label">Odstupanje duzeg zida:</label>
+          <input type="checkbox" class="longerSide" />
+        </div>
+
+        <div class="row">
+          <label for="shorterSide" class="label additional-services-label">Odstupanje kraceg zida:</label>
+          <input type="checkbox" class="shorterSide" />
+        </div>
+      </div>
+    </div>
+
+    <script src="additionalServices.js"></script>
+  </body>
+</html>

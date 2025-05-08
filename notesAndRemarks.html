@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="notesAndRemarks.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="notesAndRemarks.css" />
     <title>Napomene i zabeleske</title>
-</head>
-<body>
-    <h1 >Napomene i zabeleske</h1>
- <div class="container">
-    <div class="menu">
-        <button onclick="addRow()" class = "buttons">Dodaj red</button>
-        <button onclick="saveData()" class = "buttons">Sacuvaj</button>
-        <button onclick="writeData()" class = "buttons">Ucitaj</button>
-        <button onclick="loadData()" class = " buttons">Editovanje</button>
-        <input type="file" id="fileInput" class ="buttons">
+  </head>
+  <body>
+    <h1>Napomene i zabeleske</h1>
+    <div class="container">
+      <div class="menu">
+        <button onclick="addRow()" class="buttons">Dodaj red</button>
+        <button onclick="saveData()" class="buttons">Sacuvaj</button>
+        <button onclick="writeData()" class="buttons">Ucitaj</button>
+        <button onclick="loadData()" class="buttons">Editovanje</button>
+        <input type="file" id="fileInput" class="buttons" />
         <pre id="fileContents"></pre>
-    </div>          
-    <div id="inputs">
-    </div> 
- </div>
+      </div>
+      <div id="inputs"></div>
+    </div>
 
-
- <script src="notesAndRemarks.js"></script>
- <script src="notesAndRemarksSaveAndLoad.js"></script>
- <script src="notesAndRemarksEdit.js"></script>
-</body>
+    <script src="notesAndRemarks.js"></script>
+    <script src="notesAndRemarksSaveAndLoad.js"></script>
+    <script src="notesAndRemarksEdit.js"></script>
+  </body>
 </html>
