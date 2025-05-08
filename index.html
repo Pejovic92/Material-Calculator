@@ -1,114 +1,154 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Kalkulator materijala</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<h1 class="infoText">Kalkulator materijala</h1>
+  <head>
+    <title>Kalkulator materijala</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <h1 class="infoText">Kalkulator materijala</h1>
 
-	<div class="container">
-        <div id="menu">
-            <button onclick="addRow()" class = "buttons">Dodaj red</button>
-            <button onclick="calculateAll()" class ="calculate buttons">Izracunaj sve</button>
-            <button onclick="saveData()" class = "save buttons">Sacuvaj</button>
-            <button onclick="writeData()" class = "write buttons">Ucitaj</button>
-            <button onclick="saveDataWholeBoardOption()" class = "saveWholeBoardOption buttons">Sacuvaj</button>
-            <button onclick="writeDataWholeBoardOption()" class = "writeWholeBoardOption buttons">Ucitaj</button>
-            <button onclick="loadData()" class = "testing buttons">Editovanje</button>
-            <input type="file" id="fileInput" class ="buttons">
-            <button id="toggleResults" class ="buttons">Rezultati-forma</button>
-            <button onclick="openNewPage()" class="newPageButton buttons">Potreban okov - forma</button>
-            <button onclick="openNotesPage()" class="newPageButton buttons">Napomene i zabeleske</button>
-            <pre id="fileContents"></pre>
-        </div>
-		<div id="inputs">
-        </div>   
-		</div>
+    <div class="container">
+      <div id="menu">
+        <button onclick="addRow()" class="buttons">Dodaj red</button>
+        <button onclick="calculateAll()" class="calculate buttons">Izracunaj sve</button>
+        <button onclick="saveData()" class="save buttons">Sacuvaj</button>
+        <button onclick="writeData()" class="write buttons">Ucitaj</button>
+        <button onclick="saveDataWholeBoardOption()" class="saveWholeBoardOption buttons">Sacuvaj</button>
+        <button onclick="writeDataWholeBoardOption()" class="writeWholeBoardOption buttons">Ucitaj</button>
+        <button onclick="loadData()" class="testing buttons">Editovanje</button>
+        <input type="file" id="fileInput" class="buttons" />
+        <button id="toggleResults" class="buttons">Rezultati-forma</button>
+        <button onclick="openNewPage()" class="newPageButton buttons">Potreban okov - forma</button>
+        <button onclick="openNotesPage()" class="newPageButton buttons">Napomene i zabeleske</button>
+        <button onclick="openAdditionaServicesPage()" class="additionalServices buttons">Dodatni servisi</button>
+        <!-- <input type="file" id="jsonFiles" accept=".json" multiple />
+        <button onclick="uploadJSONFiles()">Upload</button> -->
+        <pre id="fileContents"></pre>
+      </div>
+      <div id="inputs"></div>
+    </div>
     <div class="end-results">
-			<h2 class="infoText">Rezultati</h2>
+      <h2 class="infoText">Rezultati</h2>
 
-            <div class = "rangeSlider">
-            <label for="sliderInfotext", class="infoText"> Da li se kupuje cela ploca ? </label>
-            <input type="range" min="0" max="1" value="0" class="slider" id="hideWasteSlider">
-            </div>
-			
-			<div>
-                <h3 class = "addWasteInfoText">Na ukupnu povrsinu elemenata, dodaje se otpad, koji iznosi 15%</h3>
-                <h3>Na ukupnu duzinu kantovanja, dodaje se otpad, koji iznosi 10 %</h3>
-            </div>
+      <div class="rangeSlider">
+        <label for="sliderInfotext" , class="infoText"> Da li se kupuje cela ploca ? </label>
+        <input type="range" min="0" max="1" value="0" class="slider" id="hideWasteSlider" />
+      </div>
 
-            <div class="results">
-                <div class="label"><label for="price">Cena materijala</label> </div>
-                <div class="input"><input type="number" id="price" class="priceOfMaterial inputField" placeholder="Unesi cenu materijala"> </div>
-                <div class="label-unit"><label>rsd/m2</label></div>
-            </div>
+      <div>
+        <h3 class="addWasteInfoText">Na ukupnu povrsinu elemenata, dodaje se otpad, koji iznosi 15%</h3>
+        <h3>Na ukupnu duzinu kantovanja, dodaje se otpad, koji iznosi 10 %</h3>
+      </div>
 
-            <div class = "results">
-                <div class="label"><label for="sideProcesing">Cena kantovanja</label> </div>
-                <div class="input"><input type="number" id="sideProcesing" class="sideProcessingAmount inputField" placeholder="Unesi cenu kantovanja"> </div>
-                <div class="label-unit"><label>rsd/m</label></div>
-            </div> 
+      <div class="results">
+        <div class="label"><label for="price">Cena materijala</label></div>
+        <div class="input">
+          <input type="number" id="price" class="priceOfMaterial inputField" placeholder="Unesi cenu materijala" />
+        </div>
+        <div class="label-unit"><label>rsd/m2</label></div>
+      </div>
 
-            <div class = "areaPlusWaste results spacing"> 
-                <div class="label"><label for="areaPlusWaste10">Suma povrsine + 10 %</label> </div>
-                <div class="input"> <input type="number" id="areaPlusWaste10" class="areaPlusWasteField inputField" disabled> </div>
-                <div class="label-unit"><label>m2</label></div>
-            </div> 
+      <div class="results">
+        <div class="label">
+          <label for="sideProcesing">Cena kantovanja</label>
+        </div>
+        <div class="input">
+          <input type="number" id="sideProcesing" class="sideProcessingAmount inputField" placeholder="Unesi cenu kantovanja" />
+        </div>
+        <div class="label-unit"><label>rsd/m</label></div>
+      </div>
 
-            <div class ="sum-result spacing results">
-                <div class="label"><label for="sum">Suma povrsine</label> </div>
-                <div class="input"><input type="number" id="sum" class="sumField inputField" disabled> </div>
-                <div class="label-unit"> <label>m2</label> </div>
-            </div>
+      <div class="areaPlusWaste results spacing">
+        <div class="label">
+          <label for="areaPlusWaste10">Suma povrsine + 10 %</label>
+        </div>
+        <div class="input">
+          <input type="number" id="areaPlusWaste10" class="areaPlusWasteField inputField" disabled />
+        </div>
+        <div class="label-unit"><label>m2</label></div>
+      </div>
 
-            <div class = "sum-result-with-waste results">
-                <div class="label"> <label for="sumWithWaste">Suma povrsine sa otpadom</label> </div> 
-                <div class="input"><input type="number" id="sumWithWaste" class="sumWithWasteField inputField" disabled> </div>
-                <div class="label-unit"><label>m2</label> </div>
-            </div>
+      <div class="sum-result spacing results">
+        <div class="label"><label for="sum">Suma povrsine</label></div>
+        <div class="input">
+          <input type="number" id="sum" class="sumField inputField" disabled />
+        </div>
+        <div class="label-unit"><label>m2</label></div>
+      </div>
 
-            <div class = "mandatoryAreaOfBoards results">
-                <div class="label"><label for="mandatoryAreaOfBoards">Potrebna povrsina</label> </div>
-                <div class="input"><input type="number" id="mandatoryAreaOfBoards" class="mandatoryAreaField inputField" disabled> </div>
-                <div class="label-unit"><label>m2</label></div>
-            </div>
+      <div class="sum-result-with-waste results">
+        <div class="label">
+          <label for="sumWithWaste">Suma povrsine sa otpadom</label>
+        </div>
+        <div class="input">
+          <input type="number" id="sumWithWaste" class="sumWithWasteField inputField" disabled />
+        </div>
+        <div class="label-unit"><label>m2</label></div>
+      </div>
 
-            <div class = "results">
-                <div class="label"><label for="sideProcessingLength">Duzina kantovanja</label> </div>
-                <div class="input"><input type="number" id="sideProcessingLength" class="side-proccessing-field inputField" disabled> </div>
-                <div class="label-unit"><label>m</label></div>
-            </div>
+      <div class="mandatoryAreaOfBoards results">
+        <div class="label">
+          <label for="mandatoryAreaOfBoards">Potrebna povrsina</label>
+        </div>
+        <div class="input">
+          <input type="number" id="mandatoryAreaOfBoards" class="mandatoryAreaField inputField" disabled />
+        </div>
+        <div class="label-unit"><label>m2</label></div>
+      </div>
 
-            <div class = "results">
-                <div class="label"> <label for="sideProcessingLengthWithWaste"> Duzina kantovanja sa otpadom</label> </div>
-                <div class="input"> <input type="number" id="sideProcessingLengthWithWaste" class="sideProcessingField inputField" disabled> </div>
-                <div class="label-unit"> <label>m</label></div>
-            </div>
+      <div class="results">
+        <div class="label">
+          <label for="sideProcessingLength">Duzina kantovanja</label>
+        </div>
+        <div class="input">
+          <input type="number" id="sideProcessingLength" class="side-proccessing-field inputField" disabled />
+        </div>
+        <div class="label-unit"><label>m</label></div>
+      </div>
 
-            <div class = "spacing results">
-                <div class="label"> <label for="totalMaterialPrice">Ukupna cena materijala</label></div> 
-                <div class="input"> <input type="number" id="totalMaterialPrice" class="sumPriceFiled inputField" disabled> </div> 
-                <div class="label-unit"> <label>rsd</label> </div> 
-            </div>
+      <div class="results">
+        <div class="label">
+          <label for="sideProcessingLengthWithWaste"> Duzina kantovanja sa otpadom</label>
+        </div>
+        <div class="input">
+          <input type="number" id="sideProcessingLengthWithWaste" class="sideProcessingField inputField" disabled />
+        </div>
+        <div class="label-unit"><label>m</label></div>
+      </div>
 
-            <div class = "results">
-                <div class="label"> <label for="totalSideProcessingPrice">Ukupna cena kantovanja</label> </div> 
-                <div class="input"> <input type="number" id="totalSideProcessingPrice" class="sideProcessingSum inputField" disabled> </div>
-                <div class="label-unit"><label>rsd</label></div>
-            </div>
+      <div class="spacing results">
+        <div class="label">
+          <label for="totalMaterialPrice">Ukupna cena materijala</label>
+        </div>
+        <div class="input">
+          <input type="number" id="totalMaterialPrice" class="sumPriceFiled inputField" disabled />
+        </div>
+        <div class="label-unit"><label>rsd</label></div>
+      </div>
 
-            <div class ="spacing results">
-                <div class="label"> <label for="totalCost">Ukupna cena</label> </div>
-                <div class="input"> <input type="number" id="totalCost" class="totalAmmount inputField" disabled> </div>
-                <div class="label-unit"> <label>rsd</label></div>
-            </div>
+      <div class="results">
+        <div class="label">
+          <label for="totalSideProcessingPrice">Ukupna cena kantovanja</label>
+        </div>
+        <div class="input">
+          <input type="number" id="totalSideProcessingPrice" class="sideProcessingSum inputField" disabled />
+        </div>
+        <div class="label-unit"><label>rsd</label></div>
+      </div>
+
+      <div class="spacing results">
+        <div class="label"><label for="totalCost">Ukupna cena</label></div>
+        <div class="input">
+          <input type="number" id="totalCost" class="totalAmmount inputField" disabled />
+        </div>
+        <div class="label-unit"><label>rsd</label></div>
+      </div>
     </div>
 
     <script src="edit.js"></script>
-	<script src="script.js"></script>
+    <script src="script.js"></script>
     <script src="saveAndLoad.js"></script>
     <script src="saveAndLoadWholeBoard.js"></script>
-
-</body>
+    <script src="uploadJSON.js"></script>
+  </body>
 </html>
